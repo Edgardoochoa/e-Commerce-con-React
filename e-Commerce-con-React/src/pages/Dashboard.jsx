@@ -18,7 +18,7 @@ const Dashboard = () => {
       }
     }
     fetchUserData()
-  }, [userPayload.id])
+  }, [userPayload?.id])
 
   return (
     <>

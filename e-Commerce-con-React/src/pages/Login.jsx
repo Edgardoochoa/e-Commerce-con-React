@@ -2,7 +2,6 @@ import useForm from '@/hooks/useForm'
 import { useAuthContext } from '@/hooks/useAuthContext'
 import { useNavigate } from 'react-router-dom'
 import { loginUserService } from '@/services/userServices'
-import logo from '@/assets/react.svg'
 import '@/styles/form.css'
 
 const Login = () => {
@@ -40,10 +39,10 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <img
           className='mb-4'
-          src={logo}
-          alt=''
-          width={72}
-          height={57}
+          src='https://img.freepik.com/vector-premium/plantilla-diseno-logotipo-compras-linea-logotipo-compras-digitales-cursor-raton-conceptos-carro_502185-286.jpg?size=626&ext=jpg&ga=GA1.1.1181642171.1690553134&semt=ais'
+          alt='logo'
+          width={110}
+          height={65}
         />
 
         <h1 className='h3 mb-3 fw-normal'>Please sign in</h1>

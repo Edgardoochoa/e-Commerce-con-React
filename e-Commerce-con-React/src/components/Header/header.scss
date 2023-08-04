@@ -5,13 +5,37 @@ $menu-color: #3a3b3a;
     text-decoration: none;
     letter-spacing: 2px;
 }
+.lupa-de-buscador{
+    height: 20px;
+    width: 20px;
+}
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.form-inline{
+    width: 280px;
+    margin: 0;
+    padding: 0;
+}
+
+.lupa-de-buscador{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    width: 115px;
+    height: 60px;
+}
 
 .header{
-    background-color: #d7e6e1;
+    background-color: #0D1323;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 5px 25px;
 
     &__logo{
         @include header-link;
@@ -26,6 +50,7 @@ $menu-color: #3a3b3a;
 
     &__item-link{
         @include header-link;
+        color: white;
 
         &--is-active{
             border-bottom: solid 3px;

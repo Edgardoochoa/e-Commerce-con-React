@@ -1,7 +1,6 @@
 import useForm from '@/hooks/useForm'
 import { useNavigate } from 'react-router-dom'
 import { registerUserService } from '@/services/userServices'
-import logo from '@/assets/react.svg'
 import '@/styles/form.css'
 
 const Signup = () => {
@@ -36,7 +35,7 @@ const Signup = () => {
   return (
     <main className='form-signin w-100 m-auto'>
       <form onSubmit={handleSubmit}>
-        <img className='mb-4' src={logo} alt='' width='72' height='57' />
+        <img className='mb-4' src='https://img.freepik.com/vector-premium/plantilla-diseno-logotipo-compras-linea-logotipo-compras-digitales-cursor-raton-conceptos-carro_502185-286.jpg?size=626&ext=jpg&ga=GA1.1.1181642171.1690553134&semt=ais' alt='logo' width='110' height='65' />
         <h1 className='h3 mb-3 fw-normal'>Please sign up</h1>
 
         <div className='form-floating'>
