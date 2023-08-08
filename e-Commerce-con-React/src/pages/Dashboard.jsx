@@ -1,40 +1,48 @@
 import { useState, useEffect } from 'react'
-import { useAuthContext } from '@/hooks/useAuthContext'
-import { getMeUserService } from '@/services/userServices'
+import { getAllItems } from '@/services/itemServices'
 
 const Dashboard = () => {
-  const { userPayload } = useAuthContext()
-  const [userData, setUserData] = useState({})
+  const [itemsData, setItemsData] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchItemData = async () => {
       try {
-        const response = await getMeUserService(userPayload.id)
+        const response = await getAllItems()
         if (response.status === 200) {
-          setUserData(response.data)
+          setItemsData(response.data)
+          setLoading(false)
         }
       } catch (error) {
-        console.error('Ocurrio un error en Dashboard', error.message)
+        console.log('Ocurrio un error:', error.message)
       }
     }
-    fetchUserData()
-  }, [userPayload?.id])
+    fetchItemData()
+  }, [])
 
   return (
     <>
-      <h1>Dashboard</h1>
-      {
-      userData?.first_name && <h2> {userData.first_name}</h2>
-      }
-      {
-      userData?.last_name && <h2> {userData.last_name}</h2>
-      }
-      {
-      userData?.gender && <h2> {userData.gender}</h2>
-      }
-      {
-      userData?.email && <h2> {userData.email}</h2>
-      }
+
+      <div className='d-flex flex-row flex-wrap justify-content-center'>
+        {/* Si itemsData no esta vacio, recorro el arreglo con Map y creo un Card de Bootstrap para cada elemento */}
+        {
+        loading
+          ? <h1>Cargando...</h1>
+          : itemsData.map((product) => (
+            <div className='card' style={{ width: '18rem' }} key={product.id}>
+              <img className='card-img-top' style={{ maxHeight: '300px' }} src={product.image} alt={product.product_name} />
+              <div className='card-body'>
+                <h5 className='card-title'>{product.product_name}</h5>
+                <p className='card-text'>{product.description}</p>
+                {/* Aqui no se implementa el botón, pero basta con sustituir "a" por Link de react-router-dom y la ruta del enlace indicar el componente que mostrará la información de un solo producto, seguido del id del producto */}
+                <button>Comprar</button>
+                <button>Ver Detalles »</button>
+                <img className='logo-carrito' src='https://cdn-icons-png.flaticon.com/512/5087/5087847.png' alt='carrito-de-compra' />
+              </div>
+            </div>
+          ))
+}
+      </div>
     </>
   )
 }
