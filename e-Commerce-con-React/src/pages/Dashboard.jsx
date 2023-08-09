@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getAllItems } from '@/services/itemServices'
+import { Link } from 'react-router-dom'
+import '@/styles/Dashboard.css'
 
 const Dashboard = () => {
   const [itemsData, setItemsData] = useState(null)
@@ -29,20 +31,23 @@ const Dashboard = () => {
         loading
           ? <h1>Cargando...</h1>
           : itemsData.map((product) => (
-            <div className='card' style={{ width: '18rem' }} key={product.id}>
+            <div className='card' style={{ width: '19rem' }} key={product.id}>
               <img className='card-img-top' style={{ maxHeight: '300px' }} src={product.image} alt={product.product_name} />
               <div className='card-body'>
                 <h5 className='card-title'>{product.product_name}</h5>
                 <p className='card-text'>{product.description}</p>
                 {/* Aqui no se implementa el botón, pero basta con sustituir "a" por Link de react-router-dom y la ruta del enlace indicar el componente que mostrará la información de un solo producto, seguido del id del producto */}
-                <button>Comprar</button>
-                <button>Ver Detalles »</button>
+                <button className='button-1'>Comprar</button>
+                <Link to={`/details/${product.id}`}>
+                  <button className='button-2'>Ver Detalles »</button>
+                </Link>
                 <img className='logo-carrito' src='https://cdn-icons-png.flaticon.com/512/5087/5087847.png' alt='carrito-de-compra' />
               </div>
             </div>
           ))
 }
       </div>
+
     </>
   )
 }

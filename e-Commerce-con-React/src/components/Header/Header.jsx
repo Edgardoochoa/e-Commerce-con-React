@@ -24,7 +24,6 @@ const Header = () => {
       <div>
         <form className='form-inline '>
           <input type='text' className='form-control' id='search' placeholder='Enter name' value={searchTerm} onChange={handleInputChange} />
-          <img className='lupa-de-buscador' src='https://static.vecteezy.com/system/resources/previews/009/341/273/non_2x/search-icon-sign-symbol-design-free-png.png' alt='icono' width='20' height='20' />
         </form>
       </div>
 

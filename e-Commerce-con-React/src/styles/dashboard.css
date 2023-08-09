@@ -1,0 +1,51 @@
+.logo-carrito{
+    height: 50px;
+    width: 50px;
+    padding: 6px;
+    border: 1px solid #00FFFF;
+    background-color: #0D1323;
+}
+.logo-carrito:hover{
+    width: 55px;
+    height: 55px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.button-1:hover{
+    width: 90px;
+    height: 50px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.button-2:hover{
+    width: 120px;
+    height: 50px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.button-1{
+    margin: 3px;
+    padding: 7px;
+    background-color: #0D1323;
+    color: white;
+    border: 1px solid #00FFFF;
+    border-radius: 15px;
+}
+.button-2{
+    margin: 3px;
+    padding: 7px;
+    background-color: #0D1323;
+    color: white;
+    border: 1px solid #00FFFF;
+    border-radius: 15px;
+}
+
+.card{
+    margin: 5px;
+}
+.card:hover{
+    opacity: 1;
+    filter: contrast(120%);
+}
